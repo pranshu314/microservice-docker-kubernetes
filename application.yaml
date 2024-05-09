@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
 
-  soruce:
+  source:
     repoURL: https://github.com/pranshu314/microservice-docker-kubernetes.git
     targetRevision: HEAD
     path: dev
@@ -18,6 +18,6 @@ spec:
     syncOptions:
       - CreateNamespace=true
 
-    automate:
+    automated:
       selfHeal: true
       prune: true

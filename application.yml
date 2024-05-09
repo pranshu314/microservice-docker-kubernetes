@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ap-task-1
+  namespace: argocd
+spec:
+  project: default
+
+  soruce:
+    repoURL: https://github.com/pranshu314/microservice-docker-kubernetes.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ap-task
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+    automate:
+      selfHeal: true
+      prune: true
